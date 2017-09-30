@@ -1,6 +1,6 @@
-# vue-localstorage-sessionstorage2
+# vue-localstorage-sessionstorage
 
-> test
+> localstorage and sessionstorage plugin for Vue.js
 
 ## Build Setup
 
@@ -24,4 +24,3 @@ npm run unit
 npm test
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

@@ -1,4 +1,4 @@
-import VueLocalStorage from './VueLocalStorage'
+import Storage from './storage'
 
 export default {
   /**
@@ -8,16 +8,6 @@ export default {
    * @param {Object} options
    */
   install (Vue, options = {}) {
-    if (typeof process !== 'undefined' &&
-      (
-        process.server ||
-        process.SERVER_BUILD ||
-        (process.env && process.env.VUE_ENV === 'server')
-      )
-    ) {
-      return
-    }
-
     try {
       const test = '__vue-localstorage-test__'
 
@@ -35,13 +25,13 @@ export default {
           Object.keys(this.$options[name]).forEach((key) => {
             const [type, defaultValue] = [this.$options[name][key].type, this.$options[name][key].default]
 
-            VueLocalStorage.addProperty(key, type, defaultValue)
+            Storage.addProperty(key, type, defaultValue)
           })
         }
       }
     })
 
-    Vue[name] = VueLocalStorage
-    Vue.prototype[`$${name}`] = VueLocalStorage
+    Vue[name] = new Storage()
+    Vue.prototype[`$${name}`] = new Storage()
   }
 }

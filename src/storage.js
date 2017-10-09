@@ -1,6 +1,6 @@
-class VueLocalStorage {
+class Storage {
   /**
-   * VueLocalStorage constructor
+   * Storage constructor
    */
   constructor () {
     this._properties = {}
@@ -113,4 +113,4 @@ class VueLocalStorage {
   }
 }
 
-export default new VueLocalStorage()
+export default Storage

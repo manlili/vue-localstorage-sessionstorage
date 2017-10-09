@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import App from './App'
-import Storage from './index'
-Vue.use(Storage)
 
-Vue.localStorage.set('someNumber', 123)
+import localStorage from './local-storage'
+Vue.use(localStorage)
+
+Vue.localStorage.set('someNumber', 789)
+
 new Vue({
   el: '#app',
   template: '<App/>',
